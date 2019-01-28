@@ -1,0 +1,16 @@
+@import url('https://fonts.googleapis.com/css?family=Fredericka+the+Great|Nunito:600');
+.header{
+    text-align: center;
+    color: #1ABC9C; 
+    font-family: 'Nunito', sans-serif;
+}  
+.content{
+    width: 50%;  
+    display: grid; 
+    grid-template-columns: auto auto;
+    grid-gap: 5%; 
+}   
+#PieChart{ 
+}
+#barChart{ 
+}

@@ -1,0 +1,39 @@
+@import url('https://fonts.googleapis.com/css?family=Fredericka+the+Great|Nunito:600');
+.example-container {
+    position: absolute;
+    top: 60px;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(255, 255, 255, 0.1);
+  }
+.sidenav{ 
+    padding-right: 50px;
+    background: #FFD54F; 
+    color: black
+} 
+
+.sidenav ul{ 
+    margin-top: 150px;
+    list-style-type: none;
+    font-family: 'Nunito', sans-serif;
+} 
+.sidenav ul li{ 
+    border-top: 1px solid white;
+    padding: 2em; 
+}
+.sidenav ul li:hover{
+    background:#FFB300;
+    color:white;
+} 
+/* .sidenav-content{
+    padding: 1em;  
+    background: #eee;
+    color: black
+}  */
+.toolbar{ 
+    font-family: 'Fredericka the Great', cursive;
+    color: white; 
+    font-size: 20pt;
+    font-weight: bold;  
+}

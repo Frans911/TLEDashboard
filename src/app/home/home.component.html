@@ -1,0 +1,10 @@
+
+<mat-toolbar class="toolbar" style="background-color:#FFB300"><mat-icon style="color:#1ABC9C;font-size:25pt;transform:translateY(-5px)">dashboard</mat-icon> &ensp; <span style="margin-left:25px">TLE-Dashboard</span> </mat-toolbar>
+<mat-sidenav-container class="example-container">
+  <mat-sidenav mode="side" class="sidenav" opened><ul>
+    <li (click)="select('option1')" (click)="loadit()"><mat-icon style="transform:translateY(5px);font-weight: bolder">show_chart</mat-icon> &ensp; Trend Analysis</li>
+    <li (click)="select('option2')"><mat-icon style="transform:translateY(5px);font-weight: bolder">bar_chart</mat-icon> &ensp; Collected Data</li>
+    <li (click)="select('option3')" style="border-bottom:1px solid white"><mat-icon style="transform:translateY(5px);font-weight: bolder">settings</mat-icon> &ensp; Options</li>
+  </ul></mat-sidenav> 
+  <mat-sidenav-content class="sidenav-content"> <router-outlet></router-outlet> </mat-sidenav-content>
+</mat-sidenav-container>
