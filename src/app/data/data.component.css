@@ -1,4 +1,12 @@
+@import url('https://fonts.googleapis.com/css?family=Fredericka+the+Great|Nunito:600');
 .header{
     text-align: center;
-    color: #1ABC9C
-}
+    color: #1ABC9C; 
+    font-family: 'Nunito', sans-serif;
+}  
+table {
+    width: 100%;
+    height: 100%;
+    background: white; 
+    margin:0.5em;
+  }

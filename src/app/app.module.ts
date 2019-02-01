@@ -13,6 +13,8 @@ import { AnalysisComponent } from './analysis/analysis.component';
 import { DataComponent } from './data/data.component';
 import { OptionsComponent } from './options/options.component'; 
 import { ChartsModule } from 'ng2-charts';
+import {MatTableModule} from '@angular/material/table';
+ 
 @NgModule({
   declarations: [
     AppComponent,
@@ -24,11 +26,12 @@ import { ChartsModule } from 'ng2-charts';
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
-    RouterModule.forRoot(routes),
+    RouterModule.forRoot(routes), 
     MatToolbarModule,
     MatSidenavModule,
     MatIconModule, 
-    ChartsModule
+    ChartsModule,
+    MatTableModule
   ],
   providers: [],
   bootstrap: [AppComponent]

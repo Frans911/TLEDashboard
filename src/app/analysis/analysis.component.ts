@@ -32,6 +32,19 @@ export class AnalysisComponent implements OnInit {
   noJobSeekers = 0;
   noWindshieldCleaners = 0;
   noOthers = 0;
+
+  Ages = [];
+  AgesRates = [];
+  noUnder12 = 0;
+  no12to17 = 0;
+  no18to24 = 0;
+  no25to34 = 0;
+  no35to44 = 0;
+  no45to54 = 0;
+  no55to64 = 0;
+  no65to74 = 0;
+  no75andAbove = 0;
+  
   constructor() { } 
   ngOnInit() {
    
@@ -42,6 +55,28 @@ export class AnalysisComponent implements OnInit {
         this.genderName.push({Gender:element.val().Gender})
         this.Races.push({Race:element.val().Race})
         this.Careers.push({Occupation:element.val().Occupation})
+        this.Ages.push({Age:element.val().Age}) 
+
+        if(element.val().Age == "Under 12"){
+          this.noUnder12 = this.noUnder12 + 1
+        }else if(element.val().Age == "12-17"){
+          this.no12to17 = this.no12to17 + 1
+        }else if(element.val().Age == "18-24"){
+          this.no18to24 = this.no18to24 + 1;
+        }else if(element.val().Age == "25-34"){
+          this.no25to34 = this.no25to34 + 1
+        }else if(element.val().Age == "35-44"){
+          this.no35to44 = this.no35to44 + 1
+        }else if(element.val().Age == "45-54"){
+          this.no45to54 = this.no45to54 + 1
+        }else if(element.val().Age == "55-64"){
+          this.no55to64 = this.no55to64 + 1
+        }else if(element.val().Age == "65-74"){
+          this.no65to74 = this.no65to74 + 1
+        }else if(element.val().Age == "75 and above"){
+          this.no75andAbove = this.no75andAbove + 1
+        }
+
         //Validate gender
         if(element.val().Gender === 'Female'){  
           this.numberFemale = this.numberFemale + 1; 
@@ -78,7 +113,6 @@ export class AnalysisComponent implements OnInit {
         }
       })  
       //Populate manually 
-      console.log(this.Careers)
       this.genderRate[0] = ((this.numberMale/this.genderName.length)*100).toFixed(0);
       this.genderRate[1] = ((this.numberFemale/this.genderName.length)*100).toFixed(0);
      
@@ -93,8 +127,35 @@ export class AnalysisComponent implements OnInit {
       this.CareersRates[2] = ((this.noPromoters/this.Careers.length)*100).toFixed(0); 
       this.CareersRates[3] = ((this.noJobSeekers/this.Careers.length)*100).toFixed(0); 
       this.CareersRates[4] = ((this.noWindshieldCleaners/this.Careers.length)*100).toFixed(0); 
-      this.CareersRates[4] = ((this.noOthers/this.Careers.length)*100).toFixed(0); 
-    var data = {
+      this.CareersRates[5] = ((this.noOthers/this.Careers.length)*100).toFixed(0); 
+    
+      this.AgesRates[0] = ((this.noUnder12/this.Ages.length)*100).toFixed(0); 
+      this.AgesRates[1] = ((this.no12to17/this.Ages.length)*100).toFixed(0); 
+      this.AgesRates[2] = ((this.no18to24/this.Ages.length)*100).toFixed(0); 
+      this.AgesRates[3] = ((this.no25to34/this.Ages.length)*100).toFixed(0); 
+      this.AgesRates[4] = ((this.no35to44/this.Ages.length)*100).toFixed(0); 
+      this.AgesRates[5] = ((this.no45to54/this.Ages.length)*100).toFixed(0); 
+      this.AgesRates[6] = ((this.no55to64/this.Ages.length)*100).toFixed(0); 
+      this.AgesRates[7] = ((this.no65to74/this.Ages.length)*100).toFixed(0); 
+      this.AgesRates[8] = ((this.no75andAbove/this.Ages.length)*100).toFixed(0); 
+
+      new Chart(document.getElementById("line-chart"), {
+        type: 'line',
+        data: {
+          labels: ["under 12","12-17","18-24","25-34","35-44","45-54","55-64","65-74","75 and above"],
+          datasets: [{ 
+              data: this.AgesRates,
+              label: "Age group",
+              borderColor: "#3e95cd",
+              fill: false
+            }, 
+          ]
+        },
+        options: {
+          
+        }
+      });
+      var data = {
       datasets: [{
           data: this.genderRate,
           backgroundColor: [
@@ -152,7 +213,7 @@ export class AnalysisComponent implements OnInit {
   var myPolarAreaChart = new Chart(ctx,{
     type:'polarArea',
     data: {
-      labels: ["Vendors", "Beggers", "Promoters", "Job Seekers", "Windshield Cleaner"],
+      labels: ["Vendors", "Beggers", "Promoters", "Job Seekers", "Windshield Cleaner","Others"],
       datasets: [{
           label: 'Race based',
           data:this.CareersRates,

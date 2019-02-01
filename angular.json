@@ -24,9 +24,10 @@
             ],
             "styles": [
               "./node_modules/@angular/material/prebuilt-themes/indigo-pink.css",
-              "src/styles.css"
+              "src/styles.css",
+              "src/assets/leaflet/leaflet.css"
             ],
-            "scripts": []
+            "scripts": ["src/assets/leaflet/leaflet.js"]
           },
           "configurations": {
             "production": {
@@ -78,6 +79,11 @@
             ],
             "scripts": [],
             "assets": [
+              {
+                "glob": "**/*",
+                "input": "./node_modules/leaflet/dist/images",
+                "output": "leaflet/"
+              },
               "src/favicon.ico",
               "src/assets"
             ]

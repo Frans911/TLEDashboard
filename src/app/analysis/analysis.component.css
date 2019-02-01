@@ -5,12 +5,11 @@
     font-family: 'Nunito', sans-serif;
 }  
 .content{
-    width: 50%;  
+    width: 45%;  
     display: grid; 
     grid-template-columns: auto auto;
     grid-gap: 5%; 
-}   
-#PieChart{ 
 }
-#barChart{ 
+.body{
+    height: 90%;
 }
