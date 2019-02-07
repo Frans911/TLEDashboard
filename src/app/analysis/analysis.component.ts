@@ -178,7 +178,7 @@ export class AnalysisComponent implements OnInit {
     data: {
       labels: ["African", "Coloured", "White", "Indian", "Other"],
       datasets: [{
-          label: 'Race based information',
+          label: 'Race based information', 
           data:this.RacesRates,
           backgroundColor: [
               'rgba(255, 99, 132, 0.5)',

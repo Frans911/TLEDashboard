@@ -5,11 +5,18 @@
     font-family: 'Nunito', sans-serif;
 }  
 .content{
-    width: 45%;  
+    width: 50%;  
     display: grid; 
-    grid-template-columns: auto auto;
-    grid-gap: 5%; 
+    grid-template-columns: 50fr 50fr; 
 }
 .body{
-    height: 90%;
+    height: 100%;
 }
+.example-card {
+    max-width: 400px;
+  }
+  
+  .example-header-image {
+    background-image: url('https://material.angular.io/assets/img/examples/shiba1.jpg');
+    background-size: cover;
+  }

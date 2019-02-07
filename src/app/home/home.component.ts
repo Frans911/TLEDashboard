@@ -15,12 +15,12 @@ export class HomeComponent implements OnInit {
   select(a){
   if(a == 'option1'){
     // alert('Trend analysis')
-    this.routes.navigate([''])
+    this.routes.navigate(['Home/Analysis'])
   }else if(a == 'option2'){
-    this.routes.navigate(['Data'])
+    this.routes.navigate(['Home/Data'])
   }
   else if(a == 'option3'){
-    this.routes.navigate(['Options'])
+    this.routes.navigate(['Home/Options'])
   }
   }
 }

@@ -1,0 +1,35 @@
+<body class="body">
+<div class="userLogin">
+    <mat-card>  
+        <mat-card-title style="text-align:center">
+            <mat-icon style="color:#1ABC9C;font-size:25pt;transform:translateY(7px)">dashboard</mat-icon> &ensp; <span style="margin-left:25px;font-family: 'Titan One', cursive;">TLE-Dashboard</span> 
+        </mat-card-title>  
+        <br>
+        <div class="example-container">
+            <mat-form-field>
+              <mat-placeholder>
+                  <mat-icon>alternate_email</mat-icon>
+              </mat-placeholder>
+              <input matInput placeholder="Email" [(ngModel)]="email" type="email">
+            </mat-form-field>
+          
+            <mat-form-field>
+                <mat-placeholder>
+                    <mat-icon>lock</mat-icon>
+                </mat-placeholder>
+                <input matInput placeholder="Password" [(ngModel)]="password" type="password">
+            </mat-form-field> 
+          </div><br>
+          <button style="width:250px;margin:0 0 0 27%;color:#1ABC9C" mat-raised-button (click)="SignIn()">Sign In</button><br><br>
+          <a style="margin: 0 0 0 43.5%;font-weight: lighter;font-size: 11pt;text-decoration: underline" routerLink="/SignUp">Sign up</a><br>
+          <a style="margin: 0 0 0 38.5%;font-weight: lighter;font-size: 11pt;text-decoration: underline" routerLink="">Forgot password ?</a>
+          <hr>
+          <p style="margin: 0 0 0 5%;font-weight:lighter">By clicking
+              <em>Sign up</em> you agree to our
+              <a routerLink="">terms of service</a> and
+              <a routerLink="">terms of service</a>. </p>
+      
+    </mat-card>
+   
+</div>
+</body>

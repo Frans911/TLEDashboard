@@ -1,0 +1,29 @@
+
+<body class="body">
+  <h2 mat-dialog-title style="text-align:center">Information</h2>
+  
+  <mat-dialog-content class="example-form" [formGroup]="form"> 
+      <mat-form-field class="example-full-width">
+        <input matInput placeholder="List No" formControlName="ListNo" value="{{dataSource.position}}">
+      </mat-form-field>
+      
+      <mat-form-field class="example-full-width">
+        <input matInput placeholder="Gender" formControlName="Gender" value="{{dataSource.gender}}">
+      </mat-form-field>
+      <mat-form-field class="example-full-width">
+        <input matInput placeholder="Race" formControlName="Race" value="{{dataSource.race}}">
+      </mat-form-field>
+      <mat-form-field class="example-full-width">
+        <input matInput placeholder="Occupation" formControlName="Occupation" value="{{dataSource.occupation}}">
+      </mat-form-field>
+      <mat-form-field class="example-full-width">
+        <input matInput placeholder="Age" formControlName="Age" value="{{dataSource.age}}">
+      </mat-form-field> 
+  </mat-dialog-content>
+  <mat-dialog-actions>
+    <button style="width:100px;color: #1ABC9C"  mat-raised-button (click)="close()">Close</button>
+    <button  style="width:100px;color: #1ABC9C" mat-raised-button (click)="save()">Save</button> 
+    <button  style="width:100px;color: #1ABC9C" mat-raised-button (click)="delete()">Delete</button> 
+    <button  style="width:100px;color: #1ABC9C" mat-raised-button (click)="update()">Update</button> 
+  </mat-dialog-actions> 
+</body> 

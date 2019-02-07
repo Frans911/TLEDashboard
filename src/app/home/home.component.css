@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css?family=Titan+One');
 @import url('https://fonts.googleapis.com/css?family=Fredericka+the+Great|Nunito:600');
 .example-container {
     position: absolute;
@@ -32,8 +33,7 @@
     color: black
 }  */
 .toolbar{ 
-    font-family: 'Fredericka the Great', cursive;
+    font-family: 'Titan One', cursive;
     color: white; 
-    font-size: 20pt;
-    font-weight: bold;  
+    font-size: 20pt; 
 }
