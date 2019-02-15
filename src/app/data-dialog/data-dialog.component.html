@@ -3,27 +3,65 @@
   <h2 mat-dialog-title style="text-align:center">Information</h2>
   
   <mat-dialog-content class="example-form" [formGroup]="form"> 
+    
       <mat-form-field class="example-full-width">
-        <input matInput placeholder="List No" formControlName="ListNo" value="{{dataSource.position}}">
-      </mat-form-field>
-      
-      <mat-form-field class="example-full-width">
-        <input matInput placeholder="Gender" formControlName="Gender" value="{{dataSource.gender}}">
-      </mat-form-field>
-      <mat-form-field class="example-full-width">
-        <input matInput placeholder="Race" formControlName="Race" value="{{dataSource.race}}">
-      </mat-form-field>
-      <mat-form-field class="example-full-width">
-        <input matInput placeholder="Occupation" formControlName="Occupation" value="{{dataSource.occupation}}">
+        <!-- <input matInput placeholder="Gender" formControlName="Gender" > --> 
+        <mat-placeholder >
+            Gender
+        </mat-placeholder>
+        <select  formControlName="Gender" matNativeControl required>
+          <option>Male</option>
+          <option>Female</option>
+        </select>
       </mat-form-field>
       <mat-form-field class="example-full-width">
-        <input matInput placeholder="Age" formControlName="Age" value="{{dataSource.age}}">
+        <!-- <input matInput placeholder="Race" formControlName="Race"> -->
+        <mat-placeholder >
+            Race
+        </mat-placeholder>
+        <select  formControlName="Race" matNativeControl required>
+            <option>African</option>
+            <option>Coloured</option>
+            <option>White</option>
+            <option>Indian</option>
+            <option>Other</option>
+          </select>
+      </mat-form-field>
+      <mat-form-field class="example-full-width">
+        <!-- <input matInput placeholder="Occupation" formControlName="Occupation"> -->
+        <mat-placeholder >
+            Occupation
+        </mat-placeholder>
+        <select  formControlName="Occupation" matNativeControl required>
+            <option>Vendor</option>
+            <option>Beggar</option>
+            <option>Promoters</option>
+            <option>Job Seeker</option>
+            <option>Windshield Cleaner</option>
+            <option>Other</option>
+          </select>
+      </mat-form-field>
+      <mat-form-field class="example-full-width">
+        <!-- <input matInput placeholder="Age" formControlName="Age"> -->
+        <mat-placeholder >
+            Age
+        </mat-placeholder>
+        <select  formControlName="Age" matNativeControl required>
+            <option>under 12</option>
+            <option>12-17</option>
+            <option>18-24</option>
+            <option>25-34</option>
+            <option>35-44</option>
+            <option>45-54</option>
+            <option>55-64</option>
+            <option>65-74</option>
+            <option>75 and above</option>
+          </select>
       </mat-form-field> 
   </mat-dialog-content>
   <mat-dialog-actions>
-    <button style="width:100px;color: #1ABC9C"  mat-raised-button (click)="close()">Close</button>
-    <button  style="width:100px;color: #1ABC9C" mat-raised-button (click)="save()">Save</button> 
-    <button  style="width:100px;color: #1ABC9C" mat-raised-button (click)="delete()">Delete</button> 
-    <button  style="width:100px;color: #1ABC9C" mat-raised-button (click)="update()">Update</button> 
+    <button style="width:166px;color: #1ABC9C"  mat-raised-button (click)="close()">Close</button> 
+    <button  style="width:166px;color: #1ABC9C" mat-raised-button (click)="delete()">Delete</button> 
+    <button  style="width:166px;color: #1ABC9C" mat-raised-button (click)="update()">Update</button> 
   </mat-dialog-actions> 
 </body> 

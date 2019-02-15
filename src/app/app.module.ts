@@ -24,6 +24,12 @@ import { FormsModule,ReactiveFormsModule } from '@angular/forms';
 import { SignUpComponent } from './sign-up/sign-up.component';
 import {MatSnackBarModule} from '@angular/material/snack-bar';
 import { DataDialogComponent } from './data-dialog/data-dialog.component'; 
+import {MatPaginatorModule} from '@angular/material/paginator';
+import {MatSelectModule} from '@angular/material/select';
+import {MatGridListModule} from '@angular/material/grid-list';
+import {MatChipsModule} from '@angular/material/chips';
+import {MatBadgeModule} from '@angular/material/badge';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -51,7 +57,12 @@ import { DataDialogComponent } from './data-dialog/data-dialog.component';
     MatInputModule,
     FormsModule,
     MatSnackBarModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    MatPaginatorModule,
+    MatSelectModule,
+    MatGridListModule,
+    MatChipsModule,
+    MatBadgeModule
   ],
   providers: [],
   bootstrap: [AppComponent],

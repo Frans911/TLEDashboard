@@ -9,3 +9,9 @@ table {
     background: white; 
     margin:0.5em;
   }
+.paginator{
+    position: fixed;
+    bottom: 0;
+    width: 85%;
+    background-color: #ECEFF1  ;
+}

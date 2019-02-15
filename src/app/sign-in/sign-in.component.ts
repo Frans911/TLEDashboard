@@ -15,18 +15,19 @@ export class SignInComponent implements OnInit {
   ngOnInit() {
   }
   SignIn(){
-    firebase.auth().signInWithEmailAndPassword(this.email, this.password).catch(function(error) {
-      // Handle Errors here.
-      var errorCode = error.code;
-      var errorMessage = error.message;
-      // ...
-      this.snackBar.open(error.message, "Error", {
+    firebase.auth().signInWithEmailAndPassword(this.email, this.password).then(user =>{
+      console.log(user)
+      this.routes.navigate(['Home/Analysis']);
+      this.snackBar.open("You've successfully logged in", "Enjoy", {
+        duration: 4000,
+      });
+    }).catch(error => { 
+      this.snackBar.open(error, "Error", {
         duration: 4000,
       });
     });
-    this.snackBar.open("You've successfully logged in", "Enjoy", {
-      duration: 4000,
-    });
-    this.routes.navigate(['Home/Analysis']);
+   
+   
+    
   }
 }

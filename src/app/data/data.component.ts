@@ -2,6 +2,7 @@ import { element } from 'protractor';
 import { DataDialogComponent } from './../data-dialog/data-dialog.component';
 import { Component, OnInit } from '@angular/core'; 
 import { MatDialog,MatDialogConfig } from '@angular/material' 
+import { Router } from '@angular/router'; 
 declare var firebase;
 
 @Component({
@@ -11,23 +12,31 @@ declare var firebase;
 })
 
 export class DataComponent implements OnInit {
-  displayedColumns: string[] = ['position', 'gender', 'race', 'occupation','age'];
+  displayedColumns: string[] = [ 'gender', 'race', 'occupation','age'];
   index = 0;
-  dataSource;
-  constructor(private dialog:MatDialog) { }
+  dataSource = [];
+  mockData = [];
+  constructor(private dialog:MatDialog,private rouets:Router) {
+    this.retrieveData();
+    console.log('Instiniate');
+   }
 
   ngOnInit() {
-    this.dataSource = [];  
-    firebase.database().ref('people/').on("value",(snapshot) =>{
-      snapshot.forEach(element => { 
-        this.index = this.index + 1;
-        this.dataSource.push({position:this.index,gender:element.val().Gender,race:element.val().Race,occupation:element.val().Occupation,age:element.val().Age,key:element.key}) 
-       }); 
-    }) 
+    console.log('Initialize'); 
   //  this.dataSource = ELEMENT_DATA;  
   }
+  retrieveData(){
+    this.dataSource = [];  
+    this.mockData = [];
+    firebase.database().ref('people/').once("value",(snapshot) =>{
+      snapshot.forEach(element => { 
+        this.dataSource.push({position:this.index,gender:element.val().Gender,race:element.val().Race,occupation:element.val().Occupation,age:element.val().Age,key:element.key}) 
+        this.mockData = this.dataSource; 
+       }); 
+    }) 
+  }
   openDialog(e) {
-    
+    this.rouets.navigate(['Home'])
     const dialogConfig = new MatDialogConfig();
 
     dialogConfig.disableClose = true;

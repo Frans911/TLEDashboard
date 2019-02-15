@@ -18,7 +18,7 @@ export class OptionsComponent implements OnInit {
     var peopleLocation = [
 
     ]
-    this.map = L.map("map").fitWorld();
+    this.map = L.map("map",{zoomControl:true}).fitWorld();
     firebase.database().ref('people/').on("value",(snapshot) =>{
       snapshot.forEach(element => {  
       this.people.push({Occupation:element.val().Occupation,Race:element.val().Race,Age:element.val().Age,Gender:element.val().Gender,LocationX:element.val().Location.Lat,LocationY:element.val().Location.Lat}); 
@@ -37,9 +37,9 @@ export class OptionsComponent implements OnInit {
          let markerGroup =L.featureGroup();
          for (var i = 0; i < peopleLocation.length; i++) {
         let  marker = new L.circle([peopleLocation[i][1],peopleLocation[i][2]],{
-          color: '#03A9F4',
-          fillColor: '#03A9F4',
-          fillOpacity: 0.9,
+          color: '#1ABC9C',
+          fillColor: '#1ABC9C',
+          fillOpacity: 0.5,
           radius: 500
         })
             .bindPopup("<b>Informarion</b>"+ " <br>"+peopleLocation[i][0]+"<br>"+peopleLocation[i][3]+"<br>"+peopleLocation[i][4]+" age <br>"+peopleLocation[i][5])
@@ -49,8 +49,12 @@ export class OptionsComponent implements OnInit {
           this.map.addLayer(markerGroup);
            })  
        });
+       
+       this.map.on('click', this.onMapClick);
     })  
   }
-  
+  onMapClick(e) {
+    alert("You clicked the map at " + e.latlng);
+}
 
 }

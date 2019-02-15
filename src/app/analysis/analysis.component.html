@@ -1,13 +1,24 @@
-<body class="body">
+ 
   <div class="header">
-    <h2 >Trend Analysis</h2>
-  </div>
-  <div class="content">
-    
-    <canvas id="PieChart"> </canvas>  
-    <canvas id="barChart"> </canvas>    
-    <canvas id="PolarAreaChart"> </canvas>  
-    <canvas id="line-chart"></canvas>
+    <h2 style="font-weight:bolder" >Trend Analysis</h2>
   </div> 
    
-</body>
+<mat-grid-list cols="2" rowHeight="2:1">
+
+  <mat-grid-tile><mat-card>
+      <mat-card-title style="font-weight:bold;font-size: 12pt;color: #1ABC9C">Gender based information</mat-card-title> 
+    <canvas id="PieChart" width="700px" height="300px"> </canvas> 
+</mat-card></mat-grid-tile>
+  <mat-grid-tile><mat-card>
+    <mat-card-title style="font-weight:bold;font-size: 12pt;color: #1ABC9C">Race based information</mat-card-title>
+    <canvas id="barChart" width="700px" height="300px"> </canvas></mat-card> 
+  </mat-grid-tile>
+  <mat-grid-tile><mat-card>
+      <mat-card-title style="font-weight:bold;font-size: 12pt;color: #1ABC9C">Occupation based information</mat-card-title>
+    <canvas id="PolarAreaChart" width="700px" height="300px"> </canvas>
+   </mat-card> </mat-grid-tile>
+  <mat-grid-tile><mat-card >
+      <mat-card-title style="font-weight:bold;font-size: 12pt;color: #1ABC9C">Age based information</mat-card-title>
+    <canvas id="line-chart" width="700px" height="300px"></canvas>
+  </mat-card></mat-grid-tile>
+</mat-grid-list> 

@@ -1,8 +1,6 @@
-import { element } from 'protractor';
- 
+
 import { Component, OnInit } from '@angular/core'; 
-import { Chart } from 'chart.js'
-import { load } from '@angular/core/src/render3/instructions';
+import { Chart } from 'chart.js' 
 declare var firebase;
 @Component({
   selector: 'app-analysis',
@@ -167,7 +165,7 @@ export class AnalysisComponent implements OnInit {
       // These labels appear in the legend and in the tooltips when hovering different arcs
       labels: ["Male","Female"]
   };
-    var ctx = document.getElementById("PieChart");  
+    var ctx = document.getElementById("PieChart"); 
     var myPieChart = new Chart(ctx,{ 
       type: 'doughnut',
       data: data, 
